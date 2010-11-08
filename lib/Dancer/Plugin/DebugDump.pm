@@ -28,7 +28,7 @@ register_plugin;
 
 =head1 NAME
 
-Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dumper
+Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dump
 
 =head1 DESCRIPTION
 
