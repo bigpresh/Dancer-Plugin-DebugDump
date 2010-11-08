@@ -5,7 +5,7 @@ use strict;
 use Dancer::Plugin;
 use Data::Dump;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 register debug_dump => sub {
     my $message;
