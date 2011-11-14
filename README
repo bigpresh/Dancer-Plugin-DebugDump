@@ -1,5 +1,21 @@
 NAME
-    Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dumper
+    Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dump
+    [DEPRECATED]
+
+DEPRECATION NOTICE
+    *NOTE* : this module is now deprecated; there's no need for it, as
+    Dancer's own debug keyword automatically serialises any references
+    passed to it using Data::Dumper, so you can just say e.g.:
+
+        debug \%foo;
+
+    or
+
+        debug "User details", \%foo;
+
+    This plugin may be removed from CPAN at some point in the future; I've
+    decided to leave it around with a deprecation notice for the time being
+    so that it's still available for anyone already using it.
 
 DESCRIPTION
     Provides a `debug_dump' keyword, which takes an optional label and an
