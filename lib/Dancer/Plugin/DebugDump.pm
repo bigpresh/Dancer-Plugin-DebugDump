@@ -2,10 +2,16 @@ package Dancer::Plugin::DebugDump;
 
 use warnings;
 use strict;
+use Dancer::Logger;
 use Dancer::Plugin;
 use Data::Dump;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
+
+Dancer::Logger::warning(
+    "Dancer::Plugin::DebugDump is deprecated and may go away in future.\n",
+    "Dancer's built in debug() keyword automatically serialises for you.\n",
+);
 
 register debug_dump => sub {
     my $message;
@@ -28,7 +34,24 @@ register_plugin;
 
 =head1 NAME
 
-Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dump
+Dancer::Plugin::DebugDump - dump objects to debug log with Data::Dump [DEPRECATED]
+
+=head1 DEPRECATION NOTICE
+
+*NOTE* : this module is now deprecated; there's no need for it, as Dancer's own
+L<debug keyword|Dancer/debug> automatically serialises any references passed to
+it using L<Data::Dumper>, so you can just say e.g.:
+
+    debug \%foo;
+
+or
+
+    debug "User details", \%foo;
+
+This plugin may be removed from CPAN at some point in the future; I've decided
+to leave it around with a deprecation notice for the time being so that it's
+still available for anyone already using it.
+
 
 =head1 DESCRIPTION
 
